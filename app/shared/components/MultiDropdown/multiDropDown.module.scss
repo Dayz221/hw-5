@@ -1,0 +1,30 @@
+@use "styles/theme";
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+
+    &_list {
+        position: absolute;
+        top: calc(100% + 8px);
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .25);
+        width: 100%;
+        background-color: theme.$secondary-bg-color;
+    }
+
+    &_element {
+        padding: 14px 12px;
+        font-size: 16px;
+        line-height: 20px;
+        color: theme.$text-color;
+        cursor: pointer;
+
+        &:hover {
+            color: theme.$secondary-text-color;
+        }
+
+        &.active {
+            color: theme.$accent-text-color;
+        }
+    }
+}

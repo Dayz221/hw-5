@@ -1,0 +1,86 @@
+@use "styles/theme";
+@use "styles/consts";
+
+.back_button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    transition: background-color .3s;
+    cursor: pointer;
+    margin: 60px 0 32px 0;
+
+    &_text {
+        padding: 12px 13px;
+    }
+
+    &:hover {
+        background-color: theme.$secondary-bg-color;
+    }
+
+    @media screen and (max-width: consts.$tablet-breakpoint) {
+        margin-top: consts.$small-padding;
+    }
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1.17fr;
+    column-gap: consts.$medium-padding;
+    margin-bottom: consts.$medium-padding;
+
+    @media screen and (max-width: consts.$tablet-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.title {
+    margin-bottom: consts.$small-padding;
+}
+
+.description {
+    margin-bottom: 88px;
+
+    @media screen and (max-width: consts.$tablet-breakpoint) {
+        margin-bottom: consts.$medium-padding;
+    }
+}
+
+.price {
+    margin-bottom: consts.$medium-padding;
+}
+
+.actions {
+    display: flex;
+    gap: consts.$medium-padding;
+}
+
+.related_items_title {
+    margin-bottom: 32px;
+}
+
+.related_items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: consts.$cards-gap;
+
+    @media screen and (max-width: consts.$desktop-breakpoint) {
+        gap: consts.$medium-padding;
+    }
+
+    @media screen and (max-width: consts.$mobile-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        gap: consts.$small-padding;
+    }
+}
+
+.loader_container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

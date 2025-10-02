@@ -1,0 +1,86 @@
+@use 'styles/theme';
+@import 'styles/Roboto/fonts.css';
+
+.text {
+    color: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-family: 'Roboto', sans-serif;
+    transition: color .3s;
+    text-decoration: none !important;
+    margin: 0;
+    padding: 0;
+
+    &.title {
+        font-size: 44px;
+        line-height: 48px;
+    }
+
+    &.button {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    &.p-32 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    &.p-20 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    &.p-18 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    &.p-16 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &.p-14 {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &.primary {
+        color: theme.$text-color;
+    }
+
+    &.secondary {
+        color: theme.$secondary-text-color;
+    }
+
+    &.accent {
+        color: theme.$accent-text-color;
+    }
+
+    &.normal {
+        font-weight: 400;
+    }
+
+    &.medium {
+        font-weight: 500;
+    }
+
+    &.bold {
+        font-weight: 700;
+    }
+
+    &.left {
+        text-align: left;
+    }
+
+    &.center {
+        text-align: center;
+    }
+
+    &.right {
+        text-align: right;
+    }
+}

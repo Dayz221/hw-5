@@ -1,0 +1,38 @@
+@use "styles/theme";
+
+.input_container {
+    padding: 0 11px;
+    display: flex;
+    background-color: theme.$secondary-bg-color;
+    border: 1px solid theme.$secondary-bg-color;
+    align-items: center;
+
+    &:last-child {
+        flex: 0 0 auto;
+    }
+
+    &:focus-within {
+        border-color: theme.$accent-text-color;
+    }
+
+    input {
+        background-color: theme.$secondary-bg-color;
+        font-size: 16px;
+        line-height: 20px;
+        border: none;
+        outline: none;
+        padding: 0;
+        color: theme.$text-color;
+        min-width: 0;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    input::placeholder {
+        color: theme.$secondary-text-color;
+    }
+
+    input:disabled {
+        color: theme.$secondary-text-color;
+    }
+}

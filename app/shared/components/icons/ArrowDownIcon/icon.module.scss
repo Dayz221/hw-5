@@ -1,0 +1,19 @@
+@use "styles/theme";
+
+.icon {
+    path {
+        fill: theme.$text-color;
+    }
+
+    &.secondary path {
+        fill: theme.$secondary-text-color;
+    }
+
+    &.accent path {
+        fill: theme.$accent-text-color;
+    }
+
+    &.light path {
+        fill: theme.$button-text-color;
+    }
+}

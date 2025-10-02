@@ -1,0 +1,56 @@
+@use "styles/theme";
+@use "styles/consts";
+@import "styles/Roboto/fonts.css";
+
+html,
+body,
+#root {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: theme.$bg-color;
+}
+
+body {
+    position: relative;
+}
+
+.page_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: consts.$big-padding;
+
+    @media screen and (max-width: consts.$desktop-breakpoint) {
+        padding-bottom: consts.$medium-padding;
+    }
+
+    @media screen and (max-width: consts.$tablet-breakpoint) {
+        padding-bottom: consts.$small-padding;
+    }
+}
+
+.page_content {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0 consts.$big-padding;
+
+    @media screen and (max-width: consts.$desktop-breakpoint) {
+        padding: 0 consts.$medium-padding;
+    }
+
+    @media screen and (max-width: consts.$tablet-breakpoint) {
+        padding: 0 consts.$small-padding;
+    }
+}
+
+* {
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    color: theme.$text-color;
+    outline: none;
+}

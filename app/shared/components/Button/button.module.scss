@@ -1,0 +1,74 @@
+@use "styles/theme";
+
+.button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 17px 20px;
+    background-color: theme.$brand;
+    border: none;
+    color: theme.$button-text-color;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: 0%;
+    transition: background-color .3s;
+    cursor: pointer;
+
+    &.loading {
+        padding: 14px 20px;
+    }
+
+    &:hover {
+        background-color: theme.$button-hover;
+    }
+    
+    &:active {
+        background-color: theme.$button-active;
+    }
+
+    &_loader path {
+        fill: var(--button-text-color);
+    }
+
+    &.loading:hover,
+    &.loading:active {
+        background-color: var(--brand);
+    }
+
+    &:disabled,
+    &.loading:disabled {
+        background-color: var(--button-disabled);
+        opacity: 1;
+    }
+
+    &.loading:disabled {
+        background-color: var(--button-disabled);
+        opacity: 1;
+    }
+
+    &.secondary {
+        border: 1px solid theme.$secondary-text-color;
+        background-color: theme.$bg-color;
+        color: theme.$text-color;
+    }
+
+    &.secondary:hover {
+        background-color: theme.$secondary-button-hover;
+    }
+    
+    &.secondary:active {
+        background-color: theme.$secondary-button-active;
+    }
+
+    &.small {
+        padding: 14px;
+        font-size: 14px;
+        line-height: 1;
+    }
+}
+
+
+
+
+
