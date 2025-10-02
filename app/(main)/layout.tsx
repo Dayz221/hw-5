@@ -4,11 +4,11 @@ import { useQueryStore } from "store/RootStore/hooks/useQueryStore";
 import { useCartStore } from "store/RootStore/hooks/useCartStore";
 import rootStore from "@/shared/store/RootStore";
 import Header from "components/Header";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 import "./page.scss";
 
-export const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayoutContent = ({ children }: { children: React.ReactNode }) => {
     useQueryStore();
     useCartStore();
 
@@ -23,7 +23,17 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 {children}
             </div>
         </div>
-    );
+    )
 }
 
-export default MainLayout;
+export const MainLayout = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MainLayoutContent>{children}</MainLayoutContent>
+        </Suspense>
+    )
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return <MainLayout>{children}</MainLayout>;
+}
