@@ -4,7 +4,7 @@
 
 ## 🌐 Продакшн версия
 
-**Демо**: [тык](https://hw-5-2iybe3gvw-dayz221s-projects.vercel.app/)
+**Демо**: [тык](https://hw-5-git-dev-dayz221s-projects.vercel.app/)
 > *Замените ссылку на актуальный URL после деплоя*
 
 ## ✨ Функциональность
