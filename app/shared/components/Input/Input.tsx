@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useRef } from 'react';
+import React from 'react';
 
 import styles from "./input.module.scss"
 
@@ -16,14 +16,18 @@ export type InputProps = Omit<
 };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(({value, onChange, afterSlot, className, ...props}, ref) => {
-  const inputElement = useRef<null | HTMLInputElement>(null);
-
   return (
-    <div className={classNames(styles.input_container, className, {[styles.with_icon]: !!afterSlot})} onClick={() => inputElement.current?.focus()}>
-      <input type='text' ref={inputElement} value={value} onChange={(e) => onChange(e.target.value)} {...props} />
+    <div className={classNames(styles.input_container, className, {[styles.with_icon]: !!afterSlot})} onClick={() => {
+      if (typeof ref !== 'function' && ref?.current) {
+        ref.current.focus();
+      }
+    }}>
+      <input type='text' ref={ref} value={value} onChange={(e) => onChange(e.target.value)} {...props} />
       { afterSlot }
     </div>
   )
 });
+
+Input.displayName = 'Input';
 
 export default Input;
