@@ -15,7 +15,7 @@ export type InputProps = Omit<
   afterSlot?: React.ReactNode;
 };
 
-const Input: React.FC<InputProps> = (({value, onChange, afterSlot, className, ...props}) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({value, onChange, afterSlot, className, ...props}, ref) => {
   const inputElement = useRef<null | HTMLInputElement>(null);
 
   return (
