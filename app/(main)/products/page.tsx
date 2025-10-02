@@ -5,7 +5,7 @@ import Text from "components/Text";
 
 import styles from "./Products.module.scss";
 import Input from "components/Input";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import Button from "components/Button";
 import MultiDropdown, { type Option } from "components/MultiDropdown";
 import PageSelector from "components/PageSelector";
@@ -67,6 +67,8 @@ const ProductsPage: React.FC = () => {
     const pageParam = rootStore.query.getParam("page");
     const searchParamCurrent = rootStore.query.getParam("search");
     const categoriesParamCurrent = rootStore.query.getParam("categories");
+
+    const ref = useRef<HTMLInputElement | null>(null);
 
     const querySnapshot = useMemo(() => {
         const page = Number(pageParam || 1);
@@ -156,7 +158,7 @@ const ProductsPage: React.FC = () => {
 
             <div className={styles.controls}>
                 <div className={styles.find_block}>
-                    <Input placeholder="Search product" value={search} onChange={onSearchChange} />
+                    <Input ref={ref} placeholder="Search product" value={search} onChange={onSearchChange} />
                     <Button onClick={onSearchClick}>Find now</Button>
                 </div>
 
