@@ -1,0 +1,55 @@
+@use "styles/consts";
+@use "styles/theme";
+@use "styles/mixins";
+
+.image_slider {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    .left_arrow,
+    .right_arrow {
+        @include mixins.square(64px);
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        overflow: hidden;
+        background-color: theme.$slider-button-color;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px 0 rgba(175, 173, 181, 0.2);
+        cursor: pointer;
+
+        @media screen and (max-width: consts.$mobile-breakpoint) {
+            @include mixins.square(45px);
+        }   
+    }
+
+    .left_arrow {
+        left: consts.$small-padding;
+    }
+
+    .right_arrow {
+        right: consts.$small-padding;
+    }
+
+    .left_arrow:disabled,
+    .right_arrow:disabled {
+        opacity: 60%;
+    }
+
+    .images {
+        display: flex;
+        height: 100%;
+        transition: all .3s;
+        min-width: 100%;
+    }
+
+    .image {
+        aspect-ratio: 1;
+    }
+}

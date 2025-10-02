@@ -1,0 +1,61 @@
+@use "styles/consts";
+
+.title {
+    margin: consts.$big-padding 0 consts.$small-padding;
+}
+
+.subtitle {
+    margin-bottom: consts.$semibig-padding;
+}
+
+.find_block {
+    display: flex;
+    gap: consts.$small-padding;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: consts.$small-padding;
+    margin-bottom: consts.$medium-padding;
+    
+    .find_block {
+        :first-child {
+            flex: 1 1 auto;
+        }
+    }
+
+    .filters_block {
+        & * {
+            max-width: 300px;
+        }
+    }
+}
+
+.total_products {
+    display: flex;
+    gap: consts.$small-padding;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 30px consts.$cards-gap;
+    margin-bottom: 65px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.loader_container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

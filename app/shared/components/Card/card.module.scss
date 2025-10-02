@@ -1,0 +1,48 @@
+@use "styles/theme";
+@use "styles/consts";
+@use "styles/mixins";
+
+.card {
+    background-color: theme.$secondary-bg-color;
+    transition: box-shadow .3s;
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .25);
+}
+
+.card_image {
+    display: flex;
+    aspect-ratio: 1;
+}
+
+.card_image img {
+    @include mixins.square(100%);
+    object-fit: cover;
+}
+
+.card_info {
+    background-color: theme.$secondary-bg-color;
+    padding: consts.$medium-padding consts.$extrasmall-padding;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 auto;
+}
+
+.text_side {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action_side {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}

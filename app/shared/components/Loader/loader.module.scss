@@ -1,0 +1,40 @@
+@use "styles/theme";
+@use "styles/mixins";
+
+.loader {
+    @include mixins.square(60px);
+    
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader path {
+    fill: theme.$brand;
+}
+
+.loader svg {
+    animation: loader_animation 1s infinite linear;
+}
+
+.loader.m {
+    @include mixins.square(48px);
+
+    padding: 8px;
+}
+
+.loader.s {
+    @include mixins.square(24px);
+
+    padding: 4px;
+}
+
+@keyframes loader_animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
